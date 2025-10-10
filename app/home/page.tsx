@@ -40,7 +40,7 @@ export default function HomePage() {
               <p className="text-xs opacity-90">Socio Premium</p>
             </div>
           </div>
-          <EcorunLogo className="w-10 h-10 brightness-0 invert" />
+          
         </div>
 
         {/* Search Bar */}
