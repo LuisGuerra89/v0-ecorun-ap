@@ -4,6 +4,7 @@ import { ArrowLeft, MessageCircle, Phone, Mail } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
+import { BottomNav } from "@/components/bottom-nav"
 
 export default function SegurosCategory() {
   const router = useRouter()
@@ -14,7 +15,7 @@ export default function SegurosCategory() {
   }
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-24">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -84,6 +85,9 @@ export default function SegurosCategory() {
           Un agente de Federación Patronal te contactará para brindarte asesoramiento personalizado y cotizar tu seguro.
         </p>
       </div>
+
+      {/* Bottom Nav */}
+      <BottomNav />
     </div>
   )
 }

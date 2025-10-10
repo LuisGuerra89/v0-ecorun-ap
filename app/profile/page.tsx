@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
+import { BottomNav } from "@/components/bottom-nav"
 
 export default function ProfilePage() {
   const router = useRouter()
@@ -17,7 +18,7 @@ export default function ProfilePage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -79,6 +80,9 @@ export default function ProfilePage() {
           <span className="font-semibold">Cerrar sesión</span>
         </button>
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   )
 }

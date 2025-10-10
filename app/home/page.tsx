@@ -1,12 +1,10 @@
 "use client"
-
-import { useState } from "react"
-import { Search, Home, ShoppingCart, User, Star } from "lucide-react"
+import { Search, Star } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { useRouter } from "next/navigation"
-import { EcorunLogo } from "@/components/ecorun-logo"
+import { BottomNav } from "@/components/bottom-nav"
 
 const categories = [
   { id: "electro", name: "Electro", icon: "📱", route: "/categories/electro" },
@@ -22,7 +20,6 @@ const topStores = [
 
 export default function HomePage() {
   const router = useRouter()
-  const [activeTab, setActiveTab] = useState("home")
 
   return (
     <div className="min-h-screen bg-background pb-20">
@@ -40,7 +37,6 @@ export default function HomePage() {
               <p className="text-xs opacity-90">Socio Premium</p>
             </div>
           </div>
-          
         </div>
 
         {/* Search Bar */}
@@ -101,47 +97,7 @@ export default function HomePage() {
       </div>
 
       {/* Bottom Navigation */}
-      <div className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground border-t border-primary/20 px-6 py-3 rounded-t-3xl">
-        <div className="flex items-center justify-around max-w-md mx-auto">
-          <button
-            onClick={() => setActiveTab("home")}
-            className={`flex flex-col items-center gap-1 ${activeTab === "home" ? "opacity-100" : "opacity-60"}`}
-          >
-            <Home className="w-6 h-6" />
-            <span className="text-xs">Inicio</span>
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab("purchases")
-              router.push("/purchases")
-            }}
-            className={`flex flex-col items-center gap-1 ${activeTab === "purchases" ? "opacity-100" : "opacity-60"}`}
-          >
-            <ShoppingCart className="w-6 h-6" />
-            <span className="text-xs">Mis Compras</span>
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab("cart")
-              router.push("/cart")
-            }}
-            className={`flex flex-col items-center gap-1 ${activeTab === "cart" ? "opacity-100" : "opacity-60"}`}
-          >
-            <ShoppingCart className="w-6 h-6" />
-            <span className="text-xs">Carrito</span>
-          </button>
-          <button
-            onClick={() => {
-              setActiveTab("profile")
-              router.push("/profile")
-            }}
-            className={`flex flex-col items-center gap-1 ${activeTab === "profile" ? "opacity-100" : "opacity-60"}`}
-          >
-            <User className="w-6 h-6" />
-            <span className="text-xs">Perfil</span>
-          </button>
-        </div>
-      </div>
+      <BottomNav />
     </div>
   )
 }

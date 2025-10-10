@@ -4,6 +4,7 @@ import { ArrowLeft, MapPin, Star, Search } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
+import { BottomNav } from "@/components/bottom-nav"
 
 const stores = [
   {
@@ -44,7 +45,7 @@ export default function ElectroCategory() {
   const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3 mb-4">
@@ -90,6 +91,9 @@ export default function ElectroCategory() {
           </Card>
         ))}
       </div>
+
+      {/* BottomNav Component */}
+      <BottomNav />
     </div>
   )
 }

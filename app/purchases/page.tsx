@@ -4,6 +4,7 @@ import { ArrowLeft, Calendar } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { Badge } from "@/components/ui/badge"
+import { BottomNav } from "@/components/bottom-nav"
 
 const purchases = [
   {
@@ -39,7 +40,7 @@ export default function PurchasesPage() {
   const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -106,6 +107,9 @@ export default function PurchasesPage() {
           </Card>
         ))}
       </div>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   )
 }

@@ -3,12 +3,13 @@
 import { ArrowLeft, ShoppingCart } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useRouter } from "next/navigation"
+import { BottomNav } from "@/components/bottom-nav"
 
 export default function CartPage() {
   const router = useRouter()
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -32,6 +33,9 @@ export default function CartPage() {
           Explorar comercios
         </Button>
       </div>
+
+      {/* BottomNav */}
+      <BottomNav />
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { ArrowLeft, MapPin } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
+import { BottomNav } from "@/components/bottom-nav"
 
 export default function CreditosCategory() {
   const router = useRouter()
@@ -14,7 +15,7 @@ export default function CreditosCategory() {
   ]
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-24">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -66,6 +67,9 @@ export default function CreditosCategory() {
           ))}
         </div>
       </div>
+
+      {/* Bottom Nav */}
+      <BottomNav />
     </div>
   )
 }

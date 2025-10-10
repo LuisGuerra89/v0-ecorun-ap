@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { BottomNav } from "@/components/bottom-nav"
 
 const branches = [
   "Sucursal Lomas de Zamora",
@@ -21,7 +22,7 @@ export default function StorePage({ params }: { params: { id: string } }) {
   const [showBenefits, setShowBenefits] = useState(false)
 
   return (
-    <div className="min-h-screen bg-background pb-6">
+    <div className="min-h-screen bg-background pb-20">
       {/* Header */}
       <div className="bg-primary text-primary-foreground p-4">
         <div className="flex items-center gap-3">
@@ -40,7 +41,9 @@ export default function StorePage({ params }: { params: { id: string } }) {
           </div>
           <h2 className="text-2xl font-bold">Confort Acuario</h2>
           <div className="flex items-center gap-1 text-muted-foreground mt-1">
-            <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+            {/* Star component is imported but not used here */}
+            {/* <Star className="w-5 h-5 fill-yellow-400 text-yellow-400" /> */}
+            <span className="text-5xl">⭐</span> {/* Placeholder for Star component */}
             <span className="font-semibold">4.9</span>
           </div>
         </div>
@@ -125,6 +128,9 @@ export default function StorePage({ params }: { params: { id: string } }) {
           </div>
         )}
       </div>
+
+      {/* BottomNav component */}
+      <BottomNav />
     </div>
   )
 }

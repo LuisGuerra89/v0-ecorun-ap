@@ -33,8 +33,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased`}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} antialiased bg-muted`}>
+        <div className="max-w-[430px] mx-auto bg-background min-h-screen shadow-2xl">
+          <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        </div>
         <Analytics />
       </body>
     </html>
